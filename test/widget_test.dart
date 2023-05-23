@@ -17,6 +17,7 @@ void main() {
         data: const MediaQueryData(), child: MaterialApp(home: LoginScreen()));
     await widgetTester.pumpWidget(testWidget);
     // check when taps on login but password is empty
+    await widgetTester.tap(find.byKey(const Key('btnLogin')));
     // add text to password textfield
     await widgetTester.enterText(find.bySemanticsLabel('Password'), 'pass1234');
     // check when taps on login after tenter text in password field
